@@ -1,0 +1,8 @@
+# define program father directory
+export HACKER_PROGRAM_DIR="/data"
+
+# define read-only username
+export HACKER_USER="opadmin"
+
+# define super usnername
+export HACKER_SUPER_USER="root"

@@ -1,0 +1,7 @@
+options=$(echo "$@")
+BASE_DIR="$(cd "`dirname $0`" && echo $PWD || exit 2)"
+
+# import HACKER conf
+source ${BASE_DIR}/env_sets
+
+sudo -u ${HACKER_SUPER_USER} -i ${HACKER_PROGRAM_DIR}/hacker-commands/run_command "$(echo $0 | awk -F'/' '{print $NF}') ${options}"

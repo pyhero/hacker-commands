@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# define BASE_DIR
+BASE_DIR="$(cd "`dirname $0`" && echo $PWD || exit 2)"
+
+options=$(echo "$@")
+
+main=${BASE_DIR}/apps/main.py
+[ ! -f $main ] && echo "$main not exist" && exit 2
+
+python3 $main "${options}"
