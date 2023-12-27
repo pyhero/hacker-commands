@@ -34,10 +34,10 @@ for h in $(cat ${HOSTS_FILE});do
     echo "Syncing to $h:"
 
     echo -n "sync conf [${CONF_FILE}]:"
-    scp -rq ${CONF_FILE} $h:${CONF_FILE}
+    rsync -az ${CONF_FILE} $h:${CONF_FILE}
     echo " done"
 
     echo -n "sync bin [${HACKER_USER_BIN_DIR}]:"
-    scp -rq ${HACKER_USER_BIN_DIR}/* $h:${HACKER_USER_BIN_DIR}/
+    rsync -az ${HACKER_USER_BIN_DIR}/* $h:${HACKER_USER_BIN_DIR}/
     echo " done"
 done
